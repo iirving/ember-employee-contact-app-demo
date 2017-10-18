@@ -1,3 +1,9 @@
-<h2>Employee Edit</h2>
+{{#sub-header-with-back-link}}
+  Employee Edit
+{{/sub-header-with-back-link}}
 
-<div>Name:  {{model.fullName}}</div>
+<div>
+
+{{employee-editable employee=model}}
+
+</div>

@@ -1,0 +1,76 @@
+<div class="col-md-12">
+  <div class="form-horizontal">
+    <div class="form-group">
+
+      <div class="row">
+        <div class="col-sm-4">
+          {{input type="text"
+                  value=employee.firstName
+                  class="form-control"
+                  placeholder="First Name"
+                  data-test-first-name=true
+          }}
+        </div>
+        <div class="col-sm-4">
+          {{input type="text"
+                  value=employee.lastName
+                  class="form-control"
+                  placeholder="Last Name"
+                  data-test-last-name=true
+          }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          {{input type="text"
+                  value=employee.email
+                  class="form-control"
+                  placeholder="Email"
+                  data-test-email=true
+          }}
+        </div>
+        <div class="col-sm-4">
+          {{input type="text"
+                  value=employee.phoneNumber
+                  class="form-control"
+                  placeholder="Telephone"
+                  data-test-last-phone-number=true
+          }}
+        </div>
+      </div>
+
+     <div class="row">
+      <div class="col-sm-4">
+        {{input type="text"
+                value=employee.department
+                class="form-control"
+                placeholder="Department"
+                data-test-department=true
+        }}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-sm-4">
+        <button type="submit"
+                class="btn btn-primary"
+                data-test-button-submit
+                {{action 'Save' employee}}
+                {{!-- disabled={{unless item.isValid true}} --}}
+        >Save</button> or
+        <button type="submit"
+          class="btn"
+          data-test-button-submit
+          {{action 'Cancel' employee}}
+         >Cancel</button>
+
+      </div>
+    </div>
+
+
+
+    </div>
+  </div>
+</div>
+
