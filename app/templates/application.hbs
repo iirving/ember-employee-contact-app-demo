@@ -3,23 +3,10 @@
 <h1 data-test-link-to-index>{{#link-to 'index'}}Capco Contacts Manager{{/link-to}}</h1>
 
 
-{{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
-  <div class="navbar-header">
-    {{navbar.toggle}}
-{{!--     {{#link-to "index" class="navbar-brand"}}Brand{{/link-to}} --}}
-  </div>
-  {{#navbar.content}}
-
-    {{#navbar.nav type="tabs" as |nav|}}
-      {{#nav.item}}
-          {{#nav.link-to "employees" data-test-link-to-employees}}Employees{{/nav.link-to}}
-      {{/nav.item}}
-      {{#nav.item}}
-          {{#nav.link-to "settings" data-test-link-to-settings}}Settings{{/nav.link-to}}
-      {{/nav.item}}
-    {{/navbar.nav}}
-  {{/navbar.content}}
-{{/bs-navbar}}
+  {{#bs-nav type="tabs" as |nav|}}
+    {{#nav.item}}{{#nav.link-to "employees"}}employees{{/nav.link-to}}{{/nav.item}}
+    {{#nav.item}}{{#nav.link-to "settings"}}settings{{/nav.link-to}}{{/nav.item}}
+  {{/bs-nav}}
 
 
 <body>
