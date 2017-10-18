@@ -11,10 +11,24 @@
     <tbody>
       {{#each employees as |employee|}}
         <tr>
-          <td>{{employee.id}}</td>
-          <td>{{employee.firstName}}</td>
-          <td>{{employee.lastName}}</td>
-          <td>{{employee.email}}</td>
+          <td>
+            {{#link-to 'employee' employee.id}}{{employee.id}}{{/link-to}}
+          </td>
+          <td>
+            {{#link-to 'employee' employee.id}}
+              {{employee.firstName}}
+            {{/link-to}}
+            </td>
+          <td>
+            {{#link-to 'employee' employee.id}}
+              {{employee.lastName}}
+            {{/link-to}}
+          </td>
+          <td>
+            {{#link-to 'employee' employee.id}}
+              {{employee.email}}
+            {{/link-to}}
+          </td>
         </tr>
       {{/each}}
     </tbody>
