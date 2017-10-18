@@ -1,4 +1,8 @@
   {{#bs-nav type="tabs" as |nav|}}
-    {{#nav.item}}{{#nav.link-to "employees"}}employees{{/nav.link-to}}{{/nav.item}}
-    {{#nav.item}}{{#nav.link-to "settings"}}settings{{/nav.link-to}}{{/nav.item}}
+    {{#nav.item}}
+      {{#nav.link-to "employees" data-test-link-to-employees}}Employees{{/nav.link-to}}
+    {{/nav.item}}
+    {{#nav.item}}
+      {{#nav.link-to "settings" data-test-link-to-settings}}Settings{{/nav.link-to}}
+    {{/nav.item}}
   {{/bs-nav}}
