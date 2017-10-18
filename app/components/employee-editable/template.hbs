@@ -59,9 +59,15 @@
                 {{action 'Save' employee}}
                 {{!-- disabled={{unless item.isValid true}} --}}
         >Save</button> or
-        {{#link-to 'employee' employee.id
-          tagName='button' class="btn btn-default"
-        }}Cancel{{/link-to}}
+        {{#if employeeRecordNew}}
+                {{#link-to 'employees'
+            tagName='button' class="btn btn-default"
+          }}Cancel{{/link-to}}
+        {{else}}
+          {{#link-to 'employee' employee.id
+            tagName='button' class="btn btn-default"
+          }}Cancel{{/link-to}}
+        {{/if}}
 
       </div>
     </div>
