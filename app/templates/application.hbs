@@ -1,16 +1,11 @@
 <div class="container">
 
-<h1 data-test-link-to-index>{{#link-to 'index'}}Capco Contacts Manager{{/link-to}}</h1>
+  <h1 data-test-link-to-index>{{#link-to 'index'}}Capco Contacts Manager{{/link-to}}</h1>
 
+  {{site-nav}}
 
-  {{#bs-nav type="tabs" as |nav|}}
-    {{#nav.item}}{{#nav.link-to "employees"}}employees{{/nav.link-to}}{{/nav.item}}
-    {{#nav.item}}{{#nav.link-to "settings"}}settings{{/nav.link-to}}{{/nav.item}}
-  {{/bs-nav}}
-
-
-<body>
-  {{outlet}}
-</body>
+  <body>
+    {{outlet}}
+  </body>
 
 </div>
