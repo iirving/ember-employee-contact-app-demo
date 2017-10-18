@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <th>Employee Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each employees as |employee|}}
+        <tr>
+          <td></td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.email}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
