@@ -7,4 +7,4 @@
 <div>Tel: {{employee.phoneNumber}}</div>
 <div>Dept: {{employee.department}}</div>
 
-{{#link-to 'index' tagName='button' class="btn btn-primary"}}Edit{{/link-to}}
+{{#link-to 'employee.edit' employee.id tagName='button' class="btn btn-primary"}}Edit{{/link-to}}
