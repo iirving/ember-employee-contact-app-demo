@@ -59,11 +59,9 @@
                 {{action 'Save' employee}}
                 {{!-- disabled={{unless item.isValid true}} --}}
         >Save</button> or
-        <button type="submit"
-          class="btn"
-          data-test-button-submit
-          {{action 'Cancel' employee}}
-         >Cancel</button>
+        {{#link-to 'employee' employee.id
+          tagName='button' class="btn btn-default"
+        }}Cancel{{/link-to}}
 
       </div>
     </div>
