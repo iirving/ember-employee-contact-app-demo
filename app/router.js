@@ -9,10 +9,14 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('employees')
   this.route('settings')
-  this.route('employee', {
-    path: '/employee/:employee_id'
-  }, function() {
+  this.route('employee', function() {
     this.route('new')
+    this.route('index', {
+      path: '/:employee_id'
+    })
+    this.route('edit', {
+      path: '/:employee_id/edit'
+    })
   })
 })
 

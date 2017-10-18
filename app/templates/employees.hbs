@@ -1,5 +1,7 @@
 
-{{employee-list employees=model}}
+<div>
+  {{employee-list employees=model}}
+</div>
+{{#link-to 'employee.new' tagName='button' class='btn btn-primary'}}Add New Employee{{/link-to}}
 
-<button>Add New Employee</button>
 {{outlet}}
