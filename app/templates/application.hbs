@@ -1,13 +1,17 @@
-<h1>Capco Contacts Manager</h1>
+<h1 data-test-link-to-index>{{#link-to 'index'}}Capco Contacts Manager{{/link-to}}</h1>
 
 <div>
   Navigation Goes here
-  {{#link-to 'employees'}}
-    Employees
-  {{/link-to}}
-  {{#link-to 'settings'}}
+  <div data-test-link-to-employees>
+    {{#link-to 'employees'}}
+      Employees
+    {{/link-to}}
+  </div>
+  <div data-test-link-to-settings>
+    {{#link-to 'settings'}}
       Settings
-  {{/link-to}}
+    {{/link-to}}
+  </div>
 </div>
 <body>
   {{outlet}}
