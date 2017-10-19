@@ -17,24 +17,6 @@ moduleForComponent('employee-list', 'Integration | Component | employee list', {
   }
 })
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs `{{employee-list}}`)
-
-  assert.equal(this.$().text().trim(), '')
-
-  // Template block usage:
-  this.render(hbs `
-    {{#employee-list}}
-      template block text
-    {{/employee-list}}
-  `)
-
-  assert.equal(this.$().text().trim(), 'template block text')
-})
-
 test('it renders all the employees in the list', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
@@ -53,5 +35,5 @@ test('it renders all the employees in the list', function(assert) {
 
   assert.equal(this.$('tbody tr').length,
     12,
-    'all the empoyess row are renderd')
+    'all the employees row are renderd')
 })
