@@ -25,6 +25,9 @@ export default function() {
   //  this.namespace = 'api'
   this.get('/employees')
   this.get('/employees/:id')
+  this.post('/employees')
+  this.put('/employees/:id')
+  this.patch('/employees/:id')
 
   // this.get('/employees', (schema, request) => {
   //   return schema.employee.all()

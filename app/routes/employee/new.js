@@ -2,14 +2,14 @@ import Ember from 'ember'
 
 export default Ember.Route.extend({
   model() {
-    console.log('employee.new model')
+    //    console.log('employee.new model')
     var newRecord = this.store.createRecord('employee')
     return newRecord
   },
 
   actions: {
 
-    saveEmployee(employee) {
+    newEmployee(employee) {
       var id = employee.get('id')
       employee.save().then(() => this.transitionTo('employees'))
     },
