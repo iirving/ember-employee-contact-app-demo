@@ -6,12 +6,15 @@
 <div class="row">
   <div class="col-md-4">
 
-    <div>Name:  {{employee.fullName}}</div>
+    <div>Name:  <span data-test-employee-detail-full-name>{{employee.fullName}}</span></div>
     <div>Email: {{employee.email}}</div>
     <div>Tel: {{employee.phoneNumber}}</div>
     <div>Dept: {{employee.department}}</div>
 
-    {{#link-to 'employee.edit' employee.id tagName='button' class="btn btn-primary"}}EDIT{{/link-to}}
+    {{#link-to 'employee.edit' employee.id
+              tagName='button'
+              class="btn btn-primary"
+              data-test-employee-edit-link=true }}EDIT{{/link-to}}
 
   </div>
 
