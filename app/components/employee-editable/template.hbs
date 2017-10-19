@@ -9,7 +9,13 @@
                   class="form-control"
                   placeholder="First Name"
                   data-test-first-name=true
+                  focus-out=(action (mut showFirstnameError) true)
           }}
+          {{#if showFirstnameError}}
+            <div class="error">
+              {{v-get employee 'firstName' 'message'}}
+            </div>
+          {{/if}}
         </div>
         <div class="col-sm-4">
           {{input type="text"
@@ -17,7 +23,13 @@
                   class="form-control"
                   placeholder="Last Name"
                   data-test-last-name=true
+                  focus-out=(action (mut showLastnameError) true)
           }}
+          {{#if showLastnameError}}
+            <div class="error">
+              {{v-get employee 'lastName' 'message'}}
+            </div>
+          {{/if}}
         </div>
       </div>
 
@@ -28,7 +40,13 @@
                   class="form-control"
                   placeholder="Email"
                   data-test-email=true
+                  focus-out=(action (mut showEmailError) true)
           }}
+          {{#if showEmailError}}
+            <div class="error">
+              {{v-get employee 'email' 'message'}}
+            </div>
+          {{/if}}
         </div>
         <div class="col-sm-4">
           {{input type="text"
@@ -36,7 +54,13 @@
                   class="form-control"
                   placeholder="Telephone"
                   data-test-phone-number=true
+                  focus-out=(action (mut showTelephoneError) true)
           }}
+          {{#if showTelephoneError}}
+            <div class="error">
+              {{v-get employee 'phoneNumber' 'message'}}
+            </div>
+          {{/if}}
         </div>
       </div>
 
@@ -47,7 +71,13 @@
                 class="form-control"
                 placeholder="Department"
                 data-test-department=true
+                focus-out=(action (mut showDepartmentError) true)
         }}
+        {{#if showDepartmentError}}
+            <div class="error">
+              {{v-get employee 'department' 'message'}}
+            </div>
+          {{/if}}
       </div>
     </div>
 

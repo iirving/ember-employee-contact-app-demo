@@ -1,2 +1,6 @@
+@import 'ember-bootstrap/bootstrap';
 
-@import "ember-bootstrap/bootstrap";
+$color-red: #f00 !default; //red
+.error {
+  color: $color-red;
+}
