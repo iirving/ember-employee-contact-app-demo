@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   actions: {
 
     newEmployee(employee) {
-      var id = employee.get('id')
+      //      var id = employee.get('id')
       employee.save().then(() => this.transitionTo('employees'))
     },
 
