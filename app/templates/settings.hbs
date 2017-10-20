@@ -1,6 +1,85 @@
 <h2>Settings</h2>
 
-stuff goes here
+<div class="col-md-12">
+  <div class="form-horizontal">
+    <div class="form-group">
+
+      <div class="row">
+        <div class="col-sm-4">
+        {{checkbox-with-label
+          text="value1"
+          disabled=disabled
+          update=(action (mut checked))
+        }}
+      </div>
+      </div>
+
+<div class="row">
+  <div class="col-sm-4">
+        {{checkbox-with-label
+          text="value2"
+          disabled=disabled
+          update=(action (mut checked))
+        }}
+      </div>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        {{checkbox-with-label
+          text="value3"
+          disabled=disabled
+          update=(action (mut checked))
+        }}
+      </div>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        {{checkbox-with-label
+          text="value4"
+          disabled=disabled
+          update=(action (mut checked))
+        }}
+      </div>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        {{checkbox-with-label
+          text="value5"
+          disabled=disabled
+          update=(action (mut checked))
+        }}
+      </div>
+        </div>
 
 
-<button>Save</button> or <button>Cancel</button>
+     <div class="row">
+      <div class="col-sm-1">
+        <button type="submit"
+                class="btn btn-default"
+                data-test-button-submit
+                {{action 'Save' employee}}
+                {{!-- disabled={{unless item.isValid true}} --}}
+        >Save</button>
+        </div>
+        <div class="col-sm-2">
+          or
+
+          {{#link-to 'employees'
+            tagName='button'
+            class="btn btn-default no-border"
+            data-test-cancel-link=true
+          }}Cancel{{/link-to}}
+
+
+      </div>
+    </div>
+
+
+
+    </div>
+  </div>
+</div>
+
