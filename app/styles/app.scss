@@ -1,2 +1,28 @@
-
 @import "ember-bootstrap/bootstrap";
+
+.nav-tabs {
+  background-color: darkgray;
+  border: none;
+  li {
+    border-color: #fff;
+  }
+  li a {
+    color: white;
+  }
+}
+
+.no-border {
+  border: 0;
+}
+
+.btn.round {
+  border-radius: 24px;
+}
+
+.row {
+  padding: 10px 0;
+}
+
+thead tr {
+  background: lightgrey;
+}

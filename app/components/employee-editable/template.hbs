@@ -52,23 +52,26 @@
     </div>
 
      <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-1">
         <button type="submit"
-                class="btn btn-primary"
+                class="btn btn-default"
                 data-test-button-submit
                 {{action 'Save' employee}}
                 {{!-- disabled={{unless item.isValid true}} --}}
-        >Save</button> or
+        >Save</button>
+        </div>
+        <div class="col-sm-2">
+          or
         {{#if employeeRecordNew}}
           {{#link-to 'employees'
             tagName='button'
-            class="btn btn-default"
+            class="btn btn-default no-border"
             data-test-cancel-link=true
           }}Cancel{{/link-to}}
         {{else}}
           {{#link-to 'employee' employee.id
             tagName='button'
-            class="btn btn-default"
+            class="btn btn-default no-border"
             data-test-cancel-link=true
           }}Cancel{{/link-to}}
         {{/if}}
