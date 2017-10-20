@@ -11,9 +11,7 @@ export default Ember.Component.extend({
         .then(({
           validations
         }) => {
-          console.log('pre validate', validations)
           if (validations.get('isValid')) {
-            console.log('isValid')
             this.sendAction('action', param)
           }
         })

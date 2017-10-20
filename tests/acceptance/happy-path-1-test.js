@@ -94,15 +94,24 @@ test('from the employees page open a detail page, edit it and the cancel it', fu
   })
 })
 
-test('from the employees page open a detail page, edit it and save it', function(assert) {
+test('97 from the employees page open a detail page, edit it and save it', function(assert) {
   let employees = server.createList('employees', 3)
   let e_id = employees[0].id
 
   visit('/employees')
-  click('tbody tr:first td:nth-child(2) a') // go to the first data row and click a a link
-  click('[data-test-employee-edit-link]') // click on the edit link
-  fillIn('[data-test-first-name]', 'first')
-  fillIn('[data-test-last-name]', 'last')
+
+  andThen(function() {
+    click('tbody tr:first td:nth-child(2) a') // go to the first data row and click a a link
+
+    click('[data-test-employee-edit-link]') // click on the edit link
+    fillIn('[data-test-first-name]', 'first')
+    fillIn('[data-test-last-name]', 'last')
+
+    fillIn('[data-test-email]', 'eamil.company.com')
+    fillIn('[data-test-phone-number]', '555-555-5555')
+    fillIn('[data-test-department]', 'department')
+  })
+
   click('[data-test-button-submit]')
 
   andThen(function() {
@@ -110,5 +119,25 @@ test('from the employees page open a detail page, edit it and save it', function
       'we are on the employee details page for id ' + e_id)
     assert.equal(find('[data-test-employee-detail-full-name]').text(), 'first last',
       'the edit is now displayed on the detailed page')
+  })
+})
+
+test('121 open a new employee page, edit it and save it', function(assert) {
+  assert.expect(1)
+  visit('/employee/new')
+  andThen(function() {
+    fillIn('[data-test-first-name]', 'first')
+    fillIn('[data-test-last-name]', 'last')
+
+    fillIn('[data-test-email]', 'eamil.company.com')
+    fillIn('[data-test-phone-number]', '555-555-5555')
+    fillIn('[data-test-department]', 'department')
+
+    click('[data-test-button-submit]').then(function() {
+      assert.equal(currentURL(), `/employees/`,
+        'we are on the employees list page')
+      // assert.equal(find('[data-test-employee-detail-full-name]').text(), 'first last',
+      //   'the edit is now displayed on the detailed page')
+    })
   })
 })
