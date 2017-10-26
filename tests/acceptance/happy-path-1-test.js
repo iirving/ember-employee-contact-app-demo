@@ -107,7 +107,7 @@ test('97 from the employees page open a detail page, edit it and save it', funct
     fillIn('[data-test-first-name]', 'first')
     fillIn('[data-test-last-name]', 'last')
 
-    fillIn('[data-test-email]', 'eamil.company.com')
+    fillIn('[data-test-email]', 'eamil@company.com')
     fillIn('[data-test-phone-number]', '555-555-5555')
     fillIn('[data-test-department]', 'department')
   })
@@ -129,12 +129,12 @@ test('121 open a new employee page, edit it and save it', function(assert) {
     fillIn('[data-test-first-name]', 'first')
     fillIn('[data-test-last-name]', 'last')
 
-    fillIn('[data-test-email]', 'eamil.company.com')
+    fillIn('[data-test-email]', 'eamil@company.com')
     fillIn('[data-test-phone-number]', '555-555-5555')
     fillIn('[data-test-department]', 'department')
 
     click('[data-test-button-submit]').then(function() {
-      assert.equal(currentURL(), `/employees/`,
+      assert.equal(currentURL(), `/employees`,
         'we are on the employees list page')
       // assert.equal(find('[data-test-employee-detail-full-name]').text(), 'first last',
       //   'the edit is now displayed on the detailed page')
