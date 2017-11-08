@@ -2,6 +2,7 @@ import {
   test
 } from 'qunit'
 import moduleForAcceptance from 'contacts/tests/helpers/module-for-acceptance'
+// import employeesPage from 'contacts/tests/pages/employees'
 
 moduleForAcceptance('Acceptance | happy path 1')
 
@@ -34,7 +35,7 @@ test('link to home page from another page via the header', function(assert) {
   click('[data-test-link-to-index]')
   andThen(function() {
     assert.equal(currentURL(), '/employees')
-    assert.equal(find('[data-test-site-header] a').text(), 'Capco Contacts Manager', 'header has the right test')
+    assert.equal(find('[data-test-site-header] a').text(), 'Contacts Manager', 'header has the right test')
   })
 })
 
