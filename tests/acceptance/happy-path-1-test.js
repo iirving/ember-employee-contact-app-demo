@@ -8,7 +8,6 @@ moduleForAcceptance('Acceptance | happy path 1')
 
 test('from the root url show the employees page', function(assert) {
   visit('/')
-
   andThen(function() {
     assert.equal(currentURL(), '/employees')
   })

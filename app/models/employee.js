@@ -4,6 +4,7 @@ import {
   validator,
   buildValidations
 } from 'ember-cp-validations'
+import RegexpatternsMixin from 'contacts/mixins/regexpatterns'
 
 const Validations = buildValidations({
   firstName: validator('presence', true),
@@ -15,7 +16,14 @@ const Validations = buildValidations({
     })
   ],
   phoneNumber: validator('presence', true),
-  department: validator('presence', true)
+  department: validator('presence', true),
+  password: [
+    validator('presence', true),
+    validator('format', {
+      regex: `/${RegexpatternsMixin.password}/`,
+      message: 'Password must include at least one upper case letter, one lower case letter, and a number'
+    })
+  ]
 })
 
 export default DS.Model.extend(Validations, {
@@ -24,6 +32,7 @@ export default DS.Model.extend(Validations, {
   email: DS.attr(),
   phoneNumber: DS.attr(),
   department: DS.attr(),
+  password: DS.attr(),
 
   fullName: Ember.computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`

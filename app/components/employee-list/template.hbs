@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       {{#each employees as |employee|}}
-        <tr>
+        <tr data-test-employee-record>
           <td>
             {{#link-to 'employee' employee.id}}{{employee.id}}{{/link-to}}
           </td>

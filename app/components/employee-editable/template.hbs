@@ -1,7 +1,6 @@
 <div class="col-md-12">
   <div class="form-horizontal">
     <div class="form-group">
-
       <div class="row">
         <div class="col-sm-4">
           {{input type="text"
@@ -27,12 +26,14 @@
           }}
           {{#if showLastnameError}}
             <div class="error">
-              {{v-get employee 'lastName' 'message'}}
+              {{v-get employee
+                  'lastName'
+                  'message'
+              }}
             </div>
           {{/if}}
         </div>
       </div>
-
       <div class="row">
         <div class="col-sm-4">
           {{input type="text"
@@ -63,55 +64,41 @@
           {{/if}}
         </div>
       </div>
-
-     <div class="row">
-      <div class="col-sm-4">
-        {{input type="text"
+      <div class="row">
+        <div class="col-sm-4">
+          {{input type="text"
                 value=employee.department
                 class="form-control"
                 placeholder="Department"
                 data-test-department=true
                 focus-out=(action (mut showDepartmentError) true)
-        }}
-        {{#if showDepartmentError}}
+          }}
+          {{#if showDepartmentError}}
             <div class="error">
               {{v-get employee 'department' 'message'}}
             </div>
           {{/if}}
+        </div>
       </div>
-    </div>
-
-     <div class="row">
-      <div class="col-sm-1">
-        <button type="submit"
-                class="btn btn-default"
-                data-test-button-submit
-                {{action 'Save' employee}}
-                {{!-- disabled={{unless item.isValid true}} --}}
-        >Save</button>
+      <div class="row">
+        <div class="col-sm-1">
+          <button type="submit" class="btn btn-default" data-test-button-submit {{action 'Save' employee}} {{!-- disabled={{unless item.isValid true}} --}}>
+            Save
+          </button>
         </div>
         <div class="col-sm-2">
           or
-        {{#if employeeRecordNew}}
-          {{#link-to 'employees'
-            tagName='button'
-            class="btn btn-default no-border"
-            data-test-cancel-link=true
-          }}Cancel{{/link-to}}
-        {{else}}
-          {{#link-to 'employee' employee.id
-            tagName='button'
-            class="btn btn-default no-border"
-            data-test-cancel-link=true
-          }}Cancel{{/link-to}}
-        {{/if}}
-
+          {{#if employeeRecordNew}}
+            {{#link-to 'employees' tagName='button' class="btn btn-default no-border" data-test-cancel-link=true }}
+              Cancel
+            {{/link-to}}
+          {{else}}
+            {{#link-to 'employee' employee.id tagName='button' class="btn btn-default no-border" data-test-cancel-link=true }}
+              Cancel
+            {{/link-to}}
+          {{/if}}
+        </div>
       </div>
-    </div>
-
-
-
     </div>
   </div>
 </div>
-

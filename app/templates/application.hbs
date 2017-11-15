@@ -1,13 +1,16 @@
 <div class="container-fluid">
   <div class="col-md-12">
-
-      <h1 data-test-site-header>{{#link-to 'index' data-test-link-to-index}}Contacts Manager{{/link-to}}</h1>
-
-    {{site-nav}}
+    <h1 data-test-site-header>
+      {{#link-to
+        'index'
+        data-test-link-to-index
+      }}
+        Contacts Manager
+      {{/link-to}}
+    </h1> {{site-nav}}
 
     <body class="col-md-12">
       {{outlet}}
     </body>
-
   </div>
 </div>
